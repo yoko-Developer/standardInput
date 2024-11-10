@@ -6,10 +6,19 @@ public class App {
         // Scannerを使って標準入力を取得
         Scanner scanner = new Scanner(System.in);
 
-        // 標準入力から1行を読み取る
-        String input = scanner.nextLine();
+        // exitが入力されるまで繰り返し処理
+        while (true) {
+            System.out.print("Please enter a word (type 'exit' to quit):");
+            String input = scanner.nextLine();
 
-        // "Hello {input}!"の形式で出力
-        System.out.println("Hello " + input + "!");
+            // "exit"と入力されたらプログラム終了
+            if (input.equals("exit")) {
+                System.out.println("Goodbye!");
+                break;
+            }
+
+            // 入力された文字列に対して "Hello {input}!" を出力
+            System.out.println("Hello " + input + "!");
+        }
     }
 }
